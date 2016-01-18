@@ -1,0 +1,43 @@
+apply plugin: 'android'
+apply plugin: 'android-command'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:1.5.0'
+    classpath 'com.novoda:gradle-android-command-plugin:1.5.0'
+  }
+}
+
+android {
+  compileSdkVersion 'android-23'
+  buildToolsVersion '23.0.1'
+
+  defaultConfig {
+    applicationId "com.yacinehmito.werewolves"
+    minSdkVersion 19
+    targetSdkVersion 23
+    versionCode 0
+    versionName "SNAPSHOT"
+  }
+
+  /* signingConfigs { */
+  /*   release { */
+  /*     storeFile file('../.keystore'); */
+  /*     storePassword new String(System.console().readPassword("\nEnter keystore password: ")) */
+  /*       keyAlias 'gpyh' */
+  /*       keyPassword new String(System.console().readPassword("\nEnter key password: ")) */
+
+  /*   } */
+  /* } */
+
+  buildTypes {
+    release {
+      /* signingConfig signingConfigs.release */
+        proguardFile getDefaultProguardFile('proguard-android.txt')
+    }
+  }
+
+}
